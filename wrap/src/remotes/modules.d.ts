@@ -9,9 +9,9 @@ declare module 'mfe2/AppRemote' {
 }
 
 declare module 'mfe1/routes' {
-  export const routeManifest: import('./remoteRouteTypes').RemoteRouteManifest
+  export const routeManifest: import('./types').RemoteRouteManifest
 }
 
 declare module 'mfe2/routes' {
-  export const routeManifest: import('./remoteRouteTypes').RemoteRouteManifest
+  export const routeManifest: import('./types').RemoteRouteManifest
 }

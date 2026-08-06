@@ -1,4 +1,4 @@
-import type { RemoteRouteManifest } from './remoteRouteTypes'
+import type { RemoteRouteManifest } from '../remotes/types'
 
 export type MenuItem = {
   label: string
@@ -13,16 +13,8 @@ export type MenuGroup = {
   items: MenuItem[]
 }
 
-export const loadRemoteRouteManifests = async (): Promise<
-  RemoteRouteManifest[]
-> => {
-  const [mfe1Routes, mfe2Routes] = await Promise.all([
-    import('mfe1/routes'),
-    import('mfe2/routes'),
-  ])
-
-  return [mfe1Routes.routeManifest, mfe2Routes.routeManifest]
-}
+export const getMenuLinkClassName = ({ isActive }: { isActive: boolean }) =>
+  isActive ? 'wrap-menu-link wrap-menu-link--active' : 'wrap-menu-link'
 
 const createRoutePath = (basePath: string, path: string) =>
   path ? `${basePath}/${path}` : basePath
