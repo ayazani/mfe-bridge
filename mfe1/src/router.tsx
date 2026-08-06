@@ -4,6 +4,9 @@ import { CatalogPage } from './pages/CatalogPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { SettingsPage } from './pages/SettingsPage'
+import { routeManifest } from './routeManifest'
+
+const [, catalogRoute, settingsRoute] = routeManifest.routes
 
 export const routes: RouteObject[] = [
   {
@@ -11,12 +14,12 @@ export const routes: RouteObject[] = [
     element: <AppLayout />,
     children: [
       { index: true, element: <DashboardPage /> },
-      { path: 'catalog', element: <CatalogPage /> },
-      { path: 'settings', element: <SettingsPage /> },
+      { path: catalogRoute.path, element: <CatalogPage /> },
+      { path: settingsRoute.path, element: <SettingsPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
 ]
 
-export const createAppRouter = (basename = '/mfe1') =>
+export const createAppRouter = (basename: string = routeManifest.basePath) =>
   createBrowserRouter(routes, { basename })

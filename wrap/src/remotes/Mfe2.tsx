@@ -1,8 +1,9 @@
 import { createRemoteAppComponent } from '@module-federation/bridge-react'
+import { MfeLoadingFallback } from './MfeLoadingFallback'
 
 const RemoteBridgeApp = createRemoteAppComponent({
   loader: () => import('mfe2/AppRemote'),
-  loading: <div>Loading MFE 2...</div>,
+  loading: <MfeLoadingFallback accent="green" appName="MFE 2" />,
   fallback: ({ error }) => (
     <div role="alert">Не удалось загрузить MFE 2: {String(error)}</div>
   ),

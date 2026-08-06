@@ -1,7 +1,4 @@
 :root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #172033;
-  background: #f3f6fb;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -21,11 +18,14 @@ a {
   font: inherit;
 }
 
-.app-shell {
+.mfe1-app {
   min-height: 100vh;
+  color: #172033;
+  background: #f3f6fb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.app-header {
+.mfe1-app .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,30 +35,30 @@ a {
   background: #3157d5;
 }
 
-.app-header nav {
+.mfe1-app .app-header nav {
   display: flex;
   gap: 8px;
 }
 
-.nav-link {
+.mfe1-app .nav-link {
   padding: 8px 12px;
   color: #dfe7ff;
   text-decoration: none;
   border-radius: 8px;
 }
 
-.nav-link:hover,
-.nav-link--active {
+.mfe1-app .nav-link:hover,
+.mfe1-app .nav-link--active {
   color: white;
   background: rgb(255 255 255 / 16%);
 }
 
-.page-container {
+.mfe1-app .page-container {
   width: min(920px, calc(100% - 40px));
   margin: 64px auto;
 }
 
-.page-card {
+.mfe1-app .page-card {
   padding: clamp(28px, 6vw, 64px);
   background: white;
   border: 1px solid #dfe5ef;
@@ -66,7 +66,7 @@ a {
   box-shadow: 0 18px 45px rgb(48 72 120 / 10%);
 }
 
-.page-label {
+.mfe1-app .page-label {
   display: inline-block;
   margin-bottom: 12px;
   color: #3157d5;
@@ -76,19 +76,19 @@ a {
   text-transform: uppercase;
 }
 
-h1 {
+.mfe1-app h1 {
   margin: 0 0 16px;
   font-size: clamp(32px, 6vw, 56px);
   line-height: 1.05;
 }
 
-p {
+.mfe1-app p {
   margin: 0;
   color: #667085;
   font-size: 18px;
 }
 
-.back-link {
+.mfe1-app .back-link {
   display: inline-block;
   margin-top: 24px;
   color: #3157d5;
@@ -96,12 +96,12 @@ p {
 }
 
 @media (max-width: 640px) {
-  .app-header {
+  .mfe1-app .app-header {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .app-header nav {
+  .mfe1-app .app-header nav {
     flex-wrap: wrap;
   }
 }

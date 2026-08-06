@@ -4,7 +4,7 @@ const getLinkClassName = ({ isActive }: { isActive: boolean }) =>
   isActive ? 'nav-link nav-link--active' : 'nav-link'
 
 export const AppLayout = () => (
-  <div className="app-shell">
+  <div className="app-shell mfe2-app">
     <header className="app-header">
       <strong>MFE 2</strong>
       <nav aria-label="Навигация MFE 2">

@@ -4,6 +4,9 @@ import { NotFoundPage } from './pages/NotFoundPage'
 import { OrdersPage } from './pages/OrdersPage'
 import { OverviewPage } from './pages/OverviewPage'
 import { ProfilePage } from './pages/ProfilePage'
+import { routeManifest } from './routeManifest'
+
+const [, ordersRoute, profileRoute] = routeManifest.routes
 
 export const routes: RouteObject[] = [
   {
@@ -11,12 +14,12 @@ export const routes: RouteObject[] = [
     element: <AppLayout />,
     children: [
       { index: true, element: <OverviewPage /> },
-      { path: 'orders', element: <OrdersPage /> },
-      { path: 'profile', element: <ProfilePage /> },
+      { path: ordersRoute.path, element: <OrdersPage /> },
+      { path: profileRoute.path, element: <ProfilePage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
 ]
 
-export const createAppRouter = (basename = '/mfe2') =>
+export const createAppRouter = (basename: string = routeManifest.basePath) =>
   createBrowserRouter(routes, { basename })

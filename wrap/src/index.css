@@ -119,6 +119,12 @@ a {
   gap: 4px;
 }
 
+.wrap-menu-state {
+  padding: 12px;
+  color: #bdb4cc;
+  font-size: 14px;
+}
+
 .wrap-menu-link {
   display: block;
   padding: 9px 12px;
@@ -141,6 +147,125 @@ a {
 .wrap-content {
   min-width: 0;
   min-height: 100vh;
+}
+
+.wrap-route-state {
+  margin: 48px;
+  padding: 24px;
+  color: #71677b;
+  background: white;
+  border: 1px solid #e6deef;
+  border-radius: 14px;
+}
+
+.mfe-loading {
+  min-height: 100vh;
+  color: #172033;
+  background: #f3f6fb;
+}
+
+.mfe-loading[data-accent="green"] {
+  color: #24332d;
+  background: #f3f8f5;
+}
+
+.mfe-loading-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 66px;
+  padding: 20px clamp(20px, 5vw, 72px);
+  color: white;
+  background: #3157d5;
+}
+
+.mfe-loading[data-accent="green"] .mfe-loading-header {
+  background: #187957;
+}
+
+.mfe-loading-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.mfe-loading-nav span {
+  width: 72px;
+  height: 22px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 18%);
+  border-radius: 7px;
+}
+
+.mfe-loading-nav span:nth-child(2) {
+  width: 86px;
+}
+
+.mfe-loading-container {
+  width: min(920px, calc(100% - 40px));
+  margin: 64px auto;
+}
+
+.mfe-loading-card {
+  min-height: 250px;
+  padding: clamp(28px, 6vw, 64px);
+  background: white;
+  border: 1px solid #dfe5ef;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgb(48 72 120 / 10%);
+}
+
+.mfe-loading[data-accent="green"] .mfe-loading-card {
+  border-color: #dce9e2;
+  box-shadow: 0 18px 45px rgb(33 91 67 / 10%);
+}
+
+.mfe-loading-line {
+  display: block;
+  overflow: hidden;
+  background: #e7ebf2;
+  border-radius: 8px;
+}
+
+.mfe-loading[data-accent="green"] .mfe-loading-line {
+  background: #e2ece7;
+}
+
+.mfe-loading-line::after,
+.mfe-loading-nav span::after {
+  display: block;
+  width: 45%;
+  height: 100%;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 65%), transparent);
+  animation: mfe-loading-shimmer 1.3s ease-in-out infinite;
+}
+
+.mfe-loading-line--label {
+  width: 64px;
+  height: 14px;
+  margin-bottom: 18px;
+}
+
+.mfe-loading-line--title {
+  width: min(320px, 72%);
+  height: clamp(34px, 6vw, 56px);
+  margin-bottom: 20px;
+}
+
+.mfe-loading-line--text {
+  width: min(520px, 88%);
+  height: 18px;
+}
+
+@keyframes mfe-loading-shimmer {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(260%);
+  }
 }
 
 .wrap-container {
@@ -284,5 +409,21 @@ a {
 @media (max-width: 640px) {
   .wrap-apps {
     grid-template-columns: 1fr;
+  }
+
+  .mfe-loading-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mfe-loading-nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mfe-loading-line::after,
+  .mfe-loading-nav span::after {
+    animation: none;
   }
 }
