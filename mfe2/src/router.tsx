@@ -18,4 +18,5 @@ export const routes: RouteObject[] = [
   },
 ]
 
-export const router = createBrowserRouter(routes)
+export const createAppRouter = (basename = '/mfe2') =>
+  createBrowserRouter(routes, { basename })

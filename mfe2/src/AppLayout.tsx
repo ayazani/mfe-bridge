@@ -8,13 +8,13 @@ export const AppLayout = () => (
     <header className="app-header">
       <strong>MFE 2</strong>
       <nav aria-label="Навигация MFE 2">
-        <NavLink className={getLinkClassName} to="/" end>
+        <NavLink className={getLinkClassName} to="" end>
           Обзор
         </NavLink>
-        <NavLink className={getLinkClassName} to="/orders">
+        <NavLink className={getLinkClassName} to="orders">
           Заказы
         </NavLink>
-        <NavLink className={getLinkClassName} to="/profile">
+        <NavLink className={getLinkClassName} to="profile">
           Профиль
         </NavLink>
       </nav>
